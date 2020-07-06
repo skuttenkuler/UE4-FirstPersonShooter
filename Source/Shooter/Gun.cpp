@@ -1,3 +1,4 @@
+
 // Fill out your copyright notice in the Description page of Project Settings.
 
 
@@ -16,6 +17,12 @@ AGun::AGun()
     Mesh->SetupAttachment(Root);
 
         
+    
+}
+
+void AGun::PullTrigger()
+{
+    UE_LOG(LogTemp, Warning, TEXT("You got shot mutha fucka!"));
 }
 
 // Called when the game starts or when spawned
