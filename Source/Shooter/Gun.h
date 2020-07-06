@@ -6,6 +6,7 @@
 #include "GameFramework/Actor.h"
 #include "Gun.generated.h"
 
+
 UCLASS()
 class SHOOTER_API AGun : public AActor
 {
@@ -31,6 +32,9 @@ private:
     
     UPROPERTY(VisibleAnywhere)
     USkeletalMeshComponent* Mesh;
+
+    UPROPERTY(EditAnywhere)
+    UParticleSystem* MuzzleFlash;
 
 
 };
