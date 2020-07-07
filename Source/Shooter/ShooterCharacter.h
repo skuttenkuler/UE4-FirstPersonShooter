@@ -22,7 +22,12 @@ protected:
 	// Called when the game starts or when spawned
 	virtual void BeginPlay() override;
 
-public:	
+public:
+    
+    //death
+    UFUNCTION(BlueprintPure)
+    bool IsDead() const;
+    
 	// Called every frame
 	virtual void Tick(float DeltaTime) override;
 
