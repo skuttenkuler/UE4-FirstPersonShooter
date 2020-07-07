@@ -8,14 +8,27 @@
 void AShooterPlayerController::GameHasEnded(class AActor* EndGameFocus, bool bIsWinner)
 {
     Super::GameHasEnded(EndGameFocus, bIsWinner);
-    
-    //user lost widget
-    UUserWidget* LoseScreen = CreateWidget(this, LoseScreenClass);
-    //If not a null pointer add to widget viewport
-    if(LoseScreen != nullptr)
+    //if user winner display win widget else display loser
+    if(bIsWinner)
     {
-        LoseScreen->AddToViewport();
+       UUserWidget* WinScreen = CreateWidget(this, WinScreenClass);
+       //If not a null pointer add to widget viewport
+       if(WinScreen != nullptr)
+       {
+           WinScreen->AddToViewport();
+       }
     }
+    else
+    {
+        //user lost widget
+        UUserWidget* LoseScreen = CreateWidget(this, LoseScreenClass);
+        //If not a null pointer add to widget viewport
+        if(LoseScreen != nullptr)
+        {
+            LoseScreen->AddToViewport();
+        }
+    }
+    
     
 //    UE_LOG(LogTemp, Warning, TEXT("GAME OVER"));
     //get timer and execute level restart after timer delay
