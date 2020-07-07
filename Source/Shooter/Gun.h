@@ -32,15 +32,18 @@ private:
     
     UPROPERTY(VisibleAnywhere)
     USkeletalMeshComponent* Mesh;
-    //flash
+    //gun flash
     UPROPERTY(EditAnywhere)
     UParticleSystem* MuzzleFlash;
-    //sound
+    //gun sound
     UPROPERTY(EditAnywhere)
     USoundBase* MuzzleSound;
-    
+    //impact
     UPROPERTY(EditAnywhere)
     UParticleSystem* ImpactEffect;
+    //impact sound
+    UPROPERTY(EditAnywhere)
+    USoundBase* ImpactSound;
     
     UPROPERTY(EditAnywhere)
     float MaxRange = 1000;
