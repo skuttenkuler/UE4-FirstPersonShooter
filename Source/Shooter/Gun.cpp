@@ -41,7 +41,13 @@ void AGun::PullTrigger()
     
     //LineTrace
     FHitResult Hit;
-    bool bSuccess = GetWorld()->LineTraceSingleByChannel(Hit, Location, End, ECollisionChannel::ECC_GameTraceChannel1);
+    //add actors that should be ignored by line trace
+    FCollisionQueryParams Params;
+    //owner of gun should not be hit by own gun
+    Params.AddIgnoredActor(this);
+    Params.AddIgnoredActor(GetOwner());
+    
+    bool bSuccess = GetWorld()->LineTraceSingleByChannel(Hit, Location, End, ECollisionChannel::ECC_GameTraceChannel1, Params);
     if(bSuccess)
     {
         //origin of shot
