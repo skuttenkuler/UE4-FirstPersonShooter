@@ -26,6 +26,8 @@ AGun::AGun()
 void AGun::PullTrigger()
 {
     UGameplayStatics::SpawnEmitterAttached(MuzzleFlash, Mesh, TEXT("MuzzleFlashSocket"));
+    UGameplayStatics::SpawnSoundAttached(MuzzleSound, Mesh, TEXT("MuzzleFlashSocket"));
+    
     FHitResult Hit;
     FVector ShotDirection;
     bool bSuccess = GunTrace(Hit, ShotDirection);

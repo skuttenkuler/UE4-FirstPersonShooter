@@ -32,9 +32,12 @@ private:
     
     UPROPERTY(VisibleAnywhere)
     USkeletalMeshComponent* Mesh;
-
+    //flash
     UPROPERTY(EditAnywhere)
     UParticleSystem* MuzzleFlash;
+    //sound
+    UPROPERTY(EditAnywhere)
+    USoundBase* MuzzleSound;
     
     UPROPERTY(EditAnywhere)
     UParticleSystem* ImpactEffect;
