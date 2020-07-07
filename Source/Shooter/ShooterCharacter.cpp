@@ -64,14 +64,16 @@ float AShooterCharacter::TakeDamage(float DamageAmount, struct FDamageEvent cons
     //if dead then detach controller and set the capsule collision to no collision
     if(IsDead())
     {
-        DetachFromControllerPendingDestroy();
-        GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
-        //
+        //get game mode
         AShooterGameModeBase* GameMode = GetWorld()->GetAuthGameMode<AShooterGameModeBase>();
         if (GameMode != nullptr)
         {
             GameMode->PawnKilled(this);
         }
+        DetachFromControllerPendingDestroy();
+        GetCapsuleComponent()->SetCollisionEnabled(ECollisionEnabled::NoCollision);
+       
+        
 
     }
     return DamageToApply;
