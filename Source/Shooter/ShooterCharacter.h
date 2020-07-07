@@ -36,13 +36,14 @@ public:
     //take damage method from parent Actor.h
     virtual float TakeDamage(float DamageAmount, struct FDamageEvent const& DamageEvent, class AController* EventInstigator, AActor* DamageCauser);
 
+    void Shoot();
 
 private:
 	void MoveForward(float AxisValue);
     void MoveRight(float AxisValue);
     void LookUpRate(float AxisValue);
     void LookRightRate(float AxisValue);
-    void Shoot();
+    
 
     //shooter
     UPROPERTY(EditAnyWhere)
