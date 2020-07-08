@@ -4,7 +4,7 @@ A simple C++ shooter game built with Unreal Engine 4. Kill the enemies before th
 
 ![Alt text](./Images/fps_gif.gif "Preview")
 
-## Download and Play!
+## Download and Play! (Mac Only)
 * [Shooter Game Download](https://drive.google.com/file/d/1xCx58DOInB2ab-Tz6o3s90EH0vwnEX89/view?usp=sharing)
 
 ## Technologies Used
@@ -15,7 +15,7 @@ A simple C++ shooter game built with Unreal Engine 4. Kill the enemies before th
 
 ## Code Snippets
 
-Getting the point of origin for line tracing bullets.
+Line Tracing for bullets by getting shooter location on level and calcutlating the endpoint.
 
 ```cpp
    bool AGun::GunTrace(FHitResult &Hit,FVector& ShotDirection)
